@@ -1,18 +1,18 @@
-FROM php:8.3-cli
+FROM php:8.3-fpm
 
 RUN apt-get update && apt-get install -y \
     git \
     curl \
     unzip \
     zip \
+    nginx \
+    nodejs \
+    npm \
     libzip-dev \
     libpng-dev \
     libonig-dev \
     libxml2-dev \
-    nodejs \
-    npm
-
-RUN docker-php-ext-install pdo pdo_mysql
+    && docker-php-ext-install pdo pdo_mysql zip
 
 COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
 
@@ -25,10 +25,13 @@ RUN composer install --no-dev --optimize-autoloader
 RUN npm install
 RUN npm run build
 
-RUN php artisan config:cache
-RUN php artisan route:cache
-RUN php artisan view:cache
+RUN chown -R www-data:www-data storage bootstrap/cache
+
+COPY nginx.conf /etc/nginx/sites-available/default
+
+COPY entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
 
 EXPOSE 10000
 
-CMD php artisan serve --host=0.0.0.0 --port=$PORT
+CMD ["/entrypoint.sh"]
