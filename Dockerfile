@@ -17,7 +17,7 @@ RUN npm run build
 # ---------------------------------------------------------------------------
 # Stage 2 — PHP runtime (FrankenPHP = Caddy + PHP, HTTP/2, production-grade)
 # ---------------------------------------------------------------------------
-FROM dunglas/frankenphp:1-php8.3
+FROM dunglas/frankenphp:1-php8.4
 WORKDIR /app
 
 # Composer + required PHP extensions

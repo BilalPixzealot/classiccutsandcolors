@@ -6,7 +6,7 @@ Built as a fast, SEO-friendly marketing site with room to grow into a multi-page
 
 ## Tech stack
 
-- **Laravel 13** (PHP 8.2+)
+- **Laravel 13** (PHP 8.4+)
 - **Blade** templating — data-driven from `config/salon.php`
 - **Tailwind CSS v4** + a custom design system (`resources/css/app.css`)
 - **Vite** build, with self-hosted fonts (Playfair Display + Instrument Sans)
@@ -14,7 +14,7 @@ Built as a fast, SEO-friendly marketing site with room to grow into a multi-page
 
 ## Requirements
 
-- PHP **8.2+** (developed on 8.4)
+- PHP **8.4+** (Laravel 13 dependencies require 8.4.1+)
 - Composer 2
 - Node 18+ / npm
 
