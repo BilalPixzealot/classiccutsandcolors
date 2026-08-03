@@ -1,5 +1,5 @@
 {{-- Placeholder — the full retail/products page is built in the next stage. --}}
-<x-layout title="Products" description="Salon-quality hair care from Juuce, Pure and Sarah K — available in salon at Classic Cuts & Colors, Eltham.">
+<x-layout title="Products" solid-nav description="Salon-quality hair care from Juuce, Pure and Sarah K, available in salon at Classic Cuts & Colors, Eltham.">
     <section class="band" style="padding-top:170px">
         <div class="container">
             <p class="eyebrow">The retail edit</p>

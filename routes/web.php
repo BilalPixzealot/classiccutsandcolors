@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [PageController::class, 'home'])->name('home');
+Route::get('/about', [PageController::class, 'about'])->name('about');
 Route::get('/shop', [PageController::class, 'products'])->name('products');
 Route::get('/the-work', [PageController::class, 'gallery'])->name('gallery');
 

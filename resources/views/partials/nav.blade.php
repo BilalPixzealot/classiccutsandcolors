@@ -1,5 +1,5 @@
 {{-- Fixed site header. Transparent over the hero, solidifies on scroll (see app.js). --}}
-<nav class="nav" id="nav">
+<nav class="nav {{ ($solid ?? false) ? 'nav--solid' : '' }}" id="nav">
     <a href="#top" class="nav__brand" aria-label="Classic Cuts &amp; Colors — home">
         <img class="nav__logo" src="{{ asset('images/logo.png') }}" alt="Classic Cuts &amp; Colors" width="256" height="88">
     </a>

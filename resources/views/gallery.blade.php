@@ -1,5 +1,5 @@
 {{-- Placeholder — the full "The Work" gallery is built in the next stage. --}}
-<x-layout title="The Work" description="Colour, smoothing and styling results from Classic Cuts & Colors, Eltham.">
+<x-layout title="The Work" solid-nav description="Colour, smoothing and styling results from Classic Cuts & Colors, Eltham.">
     <section class="band" style="padding-top:170px">
         <div class="container">
             <p class="eyebrow">Our work</p>

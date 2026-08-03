@@ -1,6 +1,7 @@
 @props([
     'title' => null,
     'description' => null,
+    'solidNav' => false,
 ])
 
 @php
@@ -72,7 +73,7 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body>
-    @include('partials.nav')
+    @include('partials.nav', ['solid' => $solidNav])
 
     <main>
         {{ $slot }}
