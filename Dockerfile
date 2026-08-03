@@ -39,6 +39,13 @@ COPY docker/Caddyfile /etc/caddy/Caddyfile
 COPY docker/entrypoint.sh /usr/local/bin/entrypoint
 RUN chmod +x /usr/local/bin/entrypoint
 
+# gVisor-based runtimes (e.g. Render) refuse to exec a binary that carries Linux
+# file capabilities. We bind to a high $PORT, so those caps aren't needed —
+# re-copying the binary strips them (cp does not preserve file capabilities).
+RUN cp -f /usr/local/bin/frankenphp /usr/local/bin/frankenphp.nocap \
+    && mv -f /usr/local/bin/frankenphp.nocap /usr/local/bin/frankenphp \
+    && chmod 0755 /usr/local/bin/frankenphp
+
 ENV APP_ENV=production \
     APP_DEBUG=false
 EXPOSE 8080
