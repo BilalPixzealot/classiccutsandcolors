@@ -92,4 +92,74 @@ return [
         ['quote' => 'Friendly, affordable and genuinely good at what they do. My whole family goes here.',               'name' => 'Karen L., Montmorency'],
     ],
     'rating' => ['value' => '4.8', 'count' => 90],
+
+    // Gallery ("The Work") — grouped by category. [image basename, category, caption]
+    'gallery' => [
+        ['img' => 'g01', 'cat' => 'colour',    'cap' => 'Balayage'],
+        ['img' => 'g02', 'cat' => 'colour',    'cap' => 'Blonde balayage'],
+        ['img' => 'g03', 'cat' => 'colour',    'cap' => 'Bright blonde'],
+        ['img' => 'g04', 'cat' => 'colour',    'cap' => 'Blonde foils'],
+        ['img' => 'g05', 'cat' => 'colour',    'cap' => 'Caramel balayage'],
+        ['img' => 'g06', 'cat' => 'colour',    'cap' => 'Lived-in brunette'],
+        ['img' => 'g07', 'cat' => 'colour',    'cap' => 'Honey balayage'],
+        ['img' => 'g08', 'cat' => 'colour',    'cap' => 'Silver ombre'],
+        ['img' => 'g09', 'cat' => 'smoothing', 'cap' => 'Smoothing treatment'],
+        ['img' => 'g10', 'cat' => 'smoothing', 'cap' => 'Keratin smooth'],
+        ['img' => 'g11', 'cat' => 'smoothing', 'cap' => 'Glass-hair finish'],
+        ['img' => 'g12', 'cat' => 'smoothing', 'cap' => 'Sleek & straight'],
+        ['img' => 'g13', 'cat' => 'smoothing', 'cap' => 'Frizz-free smooth'],
+        ['img' => 'g14', 'cat' => 'smoothing', 'cap' => 'Smoothing treatment'],
+        ['img' => 'g15', 'cat' => 'smoothing', 'cap' => 'Layered & sleek'],
+        ['img' => 'g16', 'cat' => 'smoothing', 'cap' => 'Nanoplasty smooth'],
+        ['img' => 'g17', 'cat' => 'smoothing', 'cap' => 'Smooth blow-dry'],
+        ['img' => 'g18', 'cat' => 'smoothing', 'cap' => 'Straightened & shiny'],
+        ['img' => 'g19', 'cat' => 'updos',     'cap' => 'Occasion updo'],
+        ['img' => 'g20', 'cat' => 'updos',     'cap' => 'Braided updo'],
+        ['img' => 'g21', 'cat' => 'updos',     'cap' => 'Soft curls'],
+        ['img' => 'g22', 'cat' => 'updos',     'cap' => 'Blow-wave curls'],
+        ['img' => 'g23', 'cat' => 'updos',     'cap' => 'Styled finish'],
+        ['img' => 'g24', 'cat' => 'updos',     'cap' => 'Volume & curls'],
+    ],
+    'gallery_categories' => [
+        'colour'    => ['label' => 'Colour & balayage',        'blurb' => 'Blondes, brunettes, caramels and lived-in tones. Colour built to grow out softly.'],
+        'smoothing' => ['label' => 'Frizz, tamed.',            'blurb' => 'Nanoplasty, Hair Botox and formaldehyde-free keratin for smooth, glossy, low-effort hair.'],
+        'updos'     => ['label' => 'Finished & occasion-ready.', 'blurb' => 'Blow-waves, curls, braids and updos for every event on the calendar.'],
+    ],
+
+    // Retail shop — brands and the ranges we stock (product photography TBC).
+    'shop' => [
+        [
+            'id' => 'juuce', 'name' => 'Juuce', 'img' => 'brand-juuce',
+            'eyebrow' => 'Organic · Australian made',
+            'tag' => 'Our house favourite: organic, Australian-made care for every hair type, and gentle on colour.',
+            'products' => [
+                ['name' => 'Toning Shampoo',        'desc' => 'Keeps blondes cool and brunettes rich between visits.'],
+                ['name' => 'Hydrating Conditioner', 'desc' => 'Daily moisture for soft, manageable lengths.'],
+                ['name' => 'Repair Treatment Mask', 'desc' => 'Weekly rebuild for coloured and heat-styled hair.'],
+                ['name' => 'Styling Oil',           'desc' => 'Lightweight shine and frizz control to finish.'],
+            ],
+        ],
+        [
+            'id' => 'pure', 'name' => 'Pure', 'img' => 'brand-pure',
+            'eyebrow' => 'Everyday essentials',
+            'tag' => 'Clean, simple staples for wash-day. The reliable basics every routine needs.',
+            'products' => [
+                ['name' => 'Daily Shampoo',      'desc' => 'Gentle enough for everyday cleansing.'],
+                ['name' => 'Daily Conditioner',  'desc' => 'Smooths and detangles without weighing hair down.'],
+                ['name' => 'Moisture Treatment', 'desc' => 'A midweek boost for thirsty ends.'],
+                ['name' => 'Flexible Hairspray', 'desc' => 'All-day hold with a natural, brushable finish.'],
+            ],
+        ],
+        [
+            'id' => 'sarah', 'name' => 'Sarah K', 'img' => 'brand-sarah',
+            'eyebrow' => 'Styling & finishing',
+            'tag' => 'Texture, grip and shine. The finishing range for creating the look at home.',
+            'products' => [
+                ['name' => 'Sea Salt Spray',  'desc' => 'Effortless, beachy texture in a spritz.'],
+                ['name' => 'Texture Paste',   'desc' => 'Pliable hold and matte definition.'],
+                ['name' => 'Dry Shampoo',     'desc' => 'Refresh and add body between washes.'],
+                ['name' => 'Finishing Spray', 'desc' => 'A polished, long-lasting set.'],
+            ],
+        ],
+    ],
 ];
