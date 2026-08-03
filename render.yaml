@@ -1,0 +1,25 @@
+# Render.com Blueprint — one-click deploy of the Dockerised Laravel app.
+# In Render: New + → Blueprint → connect this repo. Set APP_KEY (see DEPLOY.md).
+services:
+  - type: web
+    name: classic-cuts-and-colors
+    runtime: docker
+    plan: free
+    healthCheckPath: /
+    envVars:
+      - key: APP_ENV
+        value: production
+      - key: APP_DEBUG
+        value: "false"
+      - key: APP_KEY
+        sync: false        # paste a `php artisan key:generate --show` value
+      - key: APP_URL
+        sync: false        # e.g. https://classic-cuts-and-colors.onrender.com
+      - key: SESSION_DRIVER
+        value: file
+      - key: CACHE_STORE
+        value: file
+      - key: QUEUE_CONNECTION
+        value: sync
+      - key: LOG_CHANNEL
+        value: stderr

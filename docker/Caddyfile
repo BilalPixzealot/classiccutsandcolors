@@ -1,0 +1,15 @@
+{
+	frankenphp
+	auto_https off
+	admin off
+}
+
+# Bind to the platform-provided $PORT (fallback 8080 for local runs).
+:{$PORT:8080} {
+	root * /app/public
+	encode zstd br gzip
+
+	# Caddy's php_server handles Laravel's front-controller routing
+	# (serves static files if present, otherwise routes to index.php).
+	php_server
+}
