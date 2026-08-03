@@ -12,7 +12,10 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware): void {
-        //
+        // Behind a TLS-terminating proxy (Render/Railway/etc.) trust the
+        // forwarded headers so Laravel detects HTTPS and generates https:// URLs
+        // for assets — otherwise the browser blocks them as mixed content.
+        $middleware->trustProxies(at: '*');
     })
     ->withExceptions(function (Exceptions $exceptions): void {
         $exceptions->shouldRenderJsonWhen(
