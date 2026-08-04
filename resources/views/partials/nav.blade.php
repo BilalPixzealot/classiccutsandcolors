@@ -5,12 +5,8 @@
     </a>
 
     <div class="nav__links">
-        <a href="{{ route('services') }}" @class(['is-active' => request()->routeIs('services')])>Services</a>
-        <a href="{{ route('gallery') }}" @class(['is-active' => request()->routeIs('gallery')])>The Work</a>
         <a href="{{ route('about') }}" @class(['is-active' => request()->routeIs('about')])>About</a>
-        <a href="{{ route('products') }}" @class(['is-active' => request()->routeIs('products')])>Shop</a>
-        <a href="{{ route('giftcards') }}" @class(['is-active' => request()->routeIs('giftcards')])>Gift Cards</a>
-        <a href="{{ route('visit') }}" @class(['is-active' => request()->routeIs('visit')])>Visit</a>
+        <a href="{{ route('gallery') }}" @class(['is-active' => request()->routeIs('gallery')])>The Work</a>
     </div>
 
     <x-book />
