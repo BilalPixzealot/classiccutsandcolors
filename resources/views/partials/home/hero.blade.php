@@ -27,8 +27,8 @@
             </div>
 
             <div class="hero__actions load d5">
-                <a href="tel:{{ $salon['phone_tel'] }}" class="btn">Book a chair</a>
-                <a href="#services" class="btn btn--ghost">See the price list</a>
+                <x-book />
+                <a href="{{ route('services') }}" class="btn btn--ghost">See the price list</a>
             </div>
         </div>
     </div>

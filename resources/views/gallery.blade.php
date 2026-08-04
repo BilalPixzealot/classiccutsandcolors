@@ -47,7 +47,7 @@
             <p class="eyebrow">Your turn</p>
             <h2 class="gold">Let's create yours.</h2>
             <p>Book a chair and tell us what you're after: colour, a smoothing treatment, or a fresh cut.</p>
-            <a href="tel:{{ config('salon.phone_tel') }}" class="btn">Book a chair · {{ config('salon.phone') }}</a>
+            <x-book />
             <p class="note">A selection of recent work, with more added all the time. Photos shared with our clients' permission.</p>
         </div>
     </section>

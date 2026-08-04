@@ -5,8 +5,8 @@
             <h2>The gift of good hair.</h2>
             <p>Treat someone to the salon: a cut, a colour, or simply credit to spend however they like. Beautifully presented, ready in minutes, and always a welcome surprise.</p>
             <div class="hero__actions" style="margin-top:4px">
-                <a href="tel:{{ config('salon.phone_tel') }}" class="btn">Purchase a gift</a>
-                <a href="#visit" class="btn btn--ghost">Enquire in salon</a>
+                <x-book label="Purchase a gift" />
+                <a href="{{ route('visit') }}" class="btn btn--ghost">Enquire in salon</a>
             </div>
         </div>
 

@@ -18,6 +18,21 @@ class PageController extends Controller
         return view('about');
     }
 
+    public function services()
+    {
+        return view('services');
+    }
+
+    public function giftcards()
+    {
+        return view('gift-cards');
+    }
+
+    public function visit()
+    {
+        return view('visit');
+    }
+
     public function products()
     {
         return view('products');
@@ -31,7 +46,10 @@ class PageController extends Controller
     /** XML sitemap — URLs stay in sync with the named routes. */
     public function sitemap()
     {
-        $urls = [route('home'), route('products'), route('gallery')];
+        $urls = [
+            route('home'), route('services'), route('about'),
+            route('gallery'), route('products'), route('giftcards'), route('visit'),
+        ];
         $xml  = '<?xml version="1.0" encoding="UTF-8"?>' . "\n"
               . '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">';
         foreach ($urls as $url) {

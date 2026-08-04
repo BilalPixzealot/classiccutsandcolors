@@ -53,7 +53,7 @@ a { color: inherit; text-decoration: none; }
 
 /* Metallic gold gradient applied to section display headings. */
 .gold,
-.sechead h2, .split h2, .gift h2, .visit h2, .reviews__head h2, .videoband h2, .bhead h2, .ctaband h2 {
+.sechead h2, .split h2, .gift h2, .visit h2, .reviews__head h2, .videoband h2, .bhead h2, .ctaband h2, .pricegroup h3 {
     background: linear-gradient(118deg, #916b1c, #e2c26e 50%, #b0862f);
     -webkit-background-clip: text;
     background-clip: text;
@@ -92,6 +92,8 @@ a { color: inherit; text-decoration: none; }
 .nav.is-stuck .nav__links a { color: var(--ink-soft); text-shadow: none; }
 .nav__links a:hover { color: #fff; }
 .nav.is-stuck .nav__links a:hover { color: var(--ink); }
+.nav__links a.is-active { color: var(--accent); }
+.nav.is-stuck .nav__links a.is-active, .nav--solid .nav__links a.is-active { color: var(--accent); }
 
 /* Solid nav for pages without a dark hero (About, Shop, Gallery). */
 .nav--solid { background: color-mix(in srgb, var(--ground) 90%, transparent); backdrop-filter: blur(14px); border-bottom: 1px solid var(--line); }
@@ -331,6 +333,26 @@ a { color: inherit; text-decoration: none; }
 .note { margin-top: 14px; font-size: 13px; color: var(--ink-soft); }
 
 /* ------------------------------------------------------------------ *
+ *  Services price list · Gift cards · Contact map
+ * ------------------------------------------------------------------ */
+.pricegroups { display: grid; grid-template-columns: repeat(2, 1fr); gap: 34px 56px; }
+.pricegroup h3 { font-family: var(--font-display); font-size: 22px; margin-bottom: 10px; }
+.pricerow { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; padding: 11px 0; border-bottom: 1px solid var(--line); font-size: 15px; }
+.pricerow .name { color: var(--ink-soft); }
+.pricerow .price { color: var(--ink); font-variant-numeric: tabular-nums; white-space: nowrap; }
+
+.amounts { display: flex; gap: 10px; flex-wrap: wrap; margin: 0 0 26px; }
+.amount { padding: 12px 22px; border: 1px solid var(--line); border-radius: 100px; font-family: var(--font-display); font-size: 20px; color: var(--ink); background: var(--surface); }
+
+.steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+.step { padding: 30px 28px; border: 1px solid var(--line); border-radius: 10px; background: var(--surface); }
+.step b { font-family: var(--font-display); font-size: 30px; color: var(--accent); display: block; line-height: 1; margin-bottom: 12px; }
+.step h3 { font-family: var(--font-display); font-size: 20px; margin-bottom: 8px; }
+.step p { color: var(--ink-soft); font-size: 14px; margin: 0; }
+
+.map { width: 100%; height: 100%; min-height: 440px; border: 0; display: block; }
+
+/* ------------------------------------------------------------------ *
  *  Scroll-reveal (progressive enhancement — only active with JS)
  * ------------------------------------------------------------------ */
 .js .reveal { opacity: 0; transform: translateY(34px); transition: opacity .9s cubic-bezier(.2, .8, .2, 1), transform .9s cubic-bezier(.2, .8, .2, 1); }
@@ -368,6 +390,7 @@ a { color: inherit; text-decoration: none; }
     .values { grid-template-columns: repeat(2, 1fr); }
     .gwall { columns: 2; }
     .pgrid { grid-template-columns: repeat(2, 1fr); }
+    .steps { grid-template-columns: 1fr; }
 }
 @media (max-width: 560px) {
     .container { padding: 0 20px; }
@@ -381,6 +404,7 @@ a { color: inherit; text-decoration: none; }
     .values { grid-template-columns: 1fr; }
     .gwall { columns: 1; }
     .pgrid { grid-template-columns: 1fr; }
+    .pricegroups { grid-template-columns: 1fr; }
 }
 @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after { animation: none !important; transition: none !important; }

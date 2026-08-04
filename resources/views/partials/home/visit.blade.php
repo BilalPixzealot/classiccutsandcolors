@@ -6,7 +6,7 @@
             <p class="eyebrow">Come in</p>
             <h2>Ready when you are.</h2>
             <div class="hero__actions" style="margin-top:8px">
-                <a href="tel:{{ $salon['phone_tel'] }}" class="btn">Book a chair</a>
+                <x-book />
                 <a href="tel:{{ $salon['phone_tel'] }}" class="btn btn--ghost">Call {{ $salon['phone'] }}</a>
             </div>
         </div>

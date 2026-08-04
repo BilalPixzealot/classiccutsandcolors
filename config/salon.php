@@ -162,4 +162,58 @@ return [
             ],
         ],
     ],
+
+    /*
+    | Booking link — the client's online booking URL. When null, "Book a chair"
+    | buttons fall back to the Visit/contact page. Set this once and every CTA
+    | across the site updates.
+    */
+    'booking_url' => env('SALON_BOOKING_URL', null),
+
+    // Full price list (Services page). Each group => rows of [service, price].
+    'pricelist' => [
+        ['group' => 'Cuts', 'rows' => [
+            ['Ladies', '$47-50'], ['Ladies (Mon-Fri)', '$45'], ['Mens', '$35'],
+            ['Clippers', '$27'], ['School students', '$34-40'], ['Kids (under 7)', '$30'],
+            ['Restyle', '+$5-10'], ['Fringe / neck trim', '$10-15'],
+        ]],
+        ['group' => 'Blow waves', 'rows' => [
+            ['Very short', '$40'], ['Short to medium', '$45'], ['Medium to long', '$50-55'],
+            ['Long', '$65'], ['Extra long', '$75+'], ['GHD finish', '+$5-15'],
+        ]],
+        ['group' => 'Wash, cut & dry', 'rows' => [
+            ['Ladies', '$65'], ['School students', '$60'], ['Mens', '$38'], ['Kids (under 7)', '$50'],
+        ]],
+        ['group' => 'Cut & blow wave', 'rows' => [
+            ['Short', '$70-75'], ['Medium', '$80'], ['Medium to long', '$85'], ['Long', '$95'],
+        ]],
+        ['group' => 'Colour', 'rows' => [
+            ['Tint regrowth', '$75+'], ['Additional colour', '+$15'], ['Semi-permanent', '$75'],
+            ['Scalp bleach', '$90'], ['Toner', '$20-45'], ['Root stretch / ombre', '$220'],
+            ['Fashion colour', '$85+'],
+        ]],
+        ['group' => 'Foils', 'rows' => [
+            ['8 foil hi-lights', '$70'], ['Half head', '$90-130'], ['Three-quarter head', '$140-170'],
+            ['Full head', '$180-280'], ['Balayage & blow wave', '$240'], ['Scattered foils', '$150-180'],
+            ['Tip cap', '$80+'],
+        ]],
+        ['group' => 'Smoothing treatments', 'rows' => [
+            ['Nanoplasty', 'On consultation'], ['Hair Botox', 'On consultation'],
+            ['Formaldehyde-free keratin', 'On consultation'],
+        ]],
+        ['group' => 'Styling & updos', 'rows' => [
+            ['Hair up', '$55-80+'], ['French braid', '$25-50'], ['Braid & curls', '$75'],
+            ['Straightening irons', '$30'], ['GHD curls', '$40-50'],
+        ]],
+        ['group' => 'Packages', 'rows' => [
+            ['Tint & scattered foils', '$170'], ['Tint, trim & dry off', '$135'],
+            ['Tint & 4 foils', '$100'], ['Perm, cut & body wave', '$150+'],
+            ['Permanent straightening & trim', '$300+'],
+        ]],
+    ],
+
+    // Gift card denominations (Gift Cards page).
+    'giftcard' => [
+        'amounts' => [50, 100, 150, 200],
+    ],
 ];
