@@ -4,9 +4,14 @@
         <img class="nav__logo" src="{{ asset('images/logo.png') }}" alt="Classic Cuts &amp; Colors" width="256" height="88">
     </a>
 
+    {{-- Full menu shown, but only About & The Work are linked for now. --}}
     <div class="nav__links">
-        <a href="{{ route('about') }}" @class(['is-active' => request()->routeIs('about')])>About</a>
+        <span class="nav__na">Services</span>
         <a href="{{ route('gallery') }}" @class(['is-active' => request()->routeIs('gallery')])>The Work</a>
+        <a href="{{ route('about') }}" @class(['is-active' => request()->routeIs('about')])>About</a>
+        <span class="nav__na">Shop</span>
+        <span class="nav__na">Gift Cards</span>
+        <span class="nav__na">Visit</span>
     </div>
 
     <x-book />

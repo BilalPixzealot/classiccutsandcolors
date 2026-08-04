@@ -8,8 +8,12 @@
             <div class="footer__cols">
                 <div class="footer__col">
                     <h4>Explore</h4>
-                    <a href="{{ route('about') }}">About</a>
+                    <span>Services</span>
                     <a href="{{ route('gallery') }}">The Work</a>
+                    <a href="{{ route('about') }}">About</a>
+                    <span>Shop</span>
+                    <span>Gift Cards</span>
+                    <span>Visit</span>
                 </div>
 
                 <div class="footer__col">
