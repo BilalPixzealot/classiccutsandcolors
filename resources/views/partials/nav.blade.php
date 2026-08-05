@@ -6,10 +6,10 @@
 
     {{-- Full menu shown, but only About & The Work are linked for now. --}}
     <div class="nav__links">
-        <span class="nav__na">Services</span>
+        <a href="{{ route('services') }}" @class(['is-active' => request()->routeIs('services')])>Services</a>
         <a href="{{ route('gallery') }}" @class(['is-active' => request()->routeIs('gallery')])>The Work</a>
         <a href="{{ route('about') }}" @class(['is-active' => request()->routeIs('about')])>About</a>
-        <span class="nav__na">Shop</span>
+        <a href="{{ route('products') }}" @class(['is-active' => request()->routeIs('products')])>Shop</a>
         <span class="nav__na">Gift Cards</span>
         <span class="nav__na">Visit</span>
     </div>
