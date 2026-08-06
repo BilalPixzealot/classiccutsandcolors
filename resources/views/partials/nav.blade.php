@@ -10,8 +10,8 @@
         <a href="{{ route('gallery') }}" @class(['is-active' => request()->routeIs('gallery')])>The Work</a>
         <a href="{{ route('about') }}" @class(['is-active' => request()->routeIs('about')])>About</a>
         <a href="{{ route('products') }}" @class(['is-active' => request()->routeIs('products')])>Shop</a>
-        <span class="nav__na">Gift Cards</span>
-        <span class="nav__na">Visit</span>
+        <a href="{{ route('giftcards') }}" @class(['is-active' => request()->routeIs('giftcards')])>Gift Cards</a>
+        <a href="{{ route('visit') }}" @class(['is-active' => request()->routeIs('visit')])>Visit</a>
     </div>
 
     <x-book />

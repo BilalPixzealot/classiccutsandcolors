@@ -12,8 +12,8 @@
                     <a href="{{ route('gallery') }}">The Work</a>
                     <a href="{{ route('about') }}">About</a>
                     <a href="{{ route('products') }}">Shop</a>
-                    <span>Gift Cards</span>
-                    <span>Visit</span>
+                    <a href="{{ route('giftcards') }}">Gift Cards</a>
+                    <a href="{{ route('visit') }}">Visit</a>
                 </div>
 
                 <div class="footer__col">
