@@ -59,6 +59,8 @@ a { color: inherit; text-decoration: none; }
     background-clip: text;
     -webkit-text-fill-color: transparent;
     color: transparent;
+    /* Room for descenders (g, y, p) — background-clip:text otherwise crops them. */
+    padding-bottom: 0.12em;
 }
 
 /* ------------------------------------------------------------------ *
@@ -246,6 +248,8 @@ a { color: inherit; text-decoration: none; }
 .gc-label { font-size: 10.5px; letter-spacing: .28em; text-transform: uppercase; color: rgba(233, 192, 136, .85); }
 .gc-amt { font-family: var(--font-display); font-size: 40px; line-height: 1; }
 .gc-name { font-size: 11px; letter-spacing: .2em; text-transform: uppercase; color: rgba(246, 234, 215, .7); }
+.gc-logo { height: 26px; width: auto; filter: brightness(0) invert(1); }
+.gc-logo--sm { height: 20px; opacity: .85; }
 
 /* Reviews */
 .reviews { background: var(--surface); color: var(--ink); border: 1px solid var(--line); border-radius: 6px; padding: clamp(50px, 7vw, 96px); }
@@ -285,7 +289,7 @@ a { color: inherit; text-decoration: none; }
  *  Sub-page header + values grid (About, etc.)
  * ------------------------------------------------------------------ */
 .pagehead { padding: 170px 0 20px; }
-.pagehead__title { font-size: clamp(2.6rem, 7vw, 5.2rem); line-height: 1; margin: 16px 0 22px; }
+.pagehead__title { font-size: clamp(2.6rem, 7vw, 5.2rem); line-height: 1.05; margin: 16px 0 22px; }
 .pagehead__lead { max-width: 60ch; color: var(--ink-soft); font-size: 18px; margin: 0; }
 .values { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
 .value { padding: 30px 28px; border: 1px solid var(--line); border-radius: 10px; background: var(--surface); transition: transform .4s cubic-bezier(.2, .8, .2, 1), box-shadow .4s; }

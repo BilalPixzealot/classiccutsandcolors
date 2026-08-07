@@ -2,7 +2,7 @@
     <div class="container">
         <div class="sechead reveal">
             <h2>Inside the studio</h2>
-            <p>A light, modern space with arched mirrors, backlit shelves and room to relax. Take a look around.</p>
+            <p>A light, modern space with arched mirrors and backlit shelves.</p>
         </div>
 
         <div class="gallery">

@@ -12,12 +12,12 @@
 
         <div class="gift__stage reveal" aria-hidden="true">
             <div class="giftcard gc-back">
-                <div class="gc-top"><span class="gc-mono">C<b>&amp;</b>C</span><span class="gc-chip"></span></div>
+                <div class="gc-top"><img class="gc-logo gc-logo--sm" src="{{ asset('images/logo.png') }}" alt=""><span class="gc-chip"></span></div>
                 <div><div class="gc-label">Gift Card</div></div>
             </div>
             <div class="giftcard gc-front">
                 <div class="gc-top">
-                    <span class="gc-mono">Classic Cuts <b>&amp;</b> Colors</span>
+                    <img class="gc-logo" src="{{ asset('images/logo.png') }}" alt="Classic Cuts &amp; Colors">
                     <span class="gc-chip"></span>
                 </div>
                 <div>
