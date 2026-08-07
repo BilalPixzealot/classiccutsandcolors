@@ -1,10 +1,13 @@
 @php
-    $circles = [
-        ['img' => 'work-honey',      'label' => 'Cuts',             'id' => 'women'],
-        ['img' => 'work-balayage',   'label' => 'Colour',           'id' => 'colour'],
-        ['img' => 'work-silver',     'label' => 'Foils & balayage', 'id' => 'colour'],
-        ['img' => 'work-glass-hair', 'label' => 'Smoothing',        'id' => 'treatments'],
-        ['img' => 'work-updo',       'label' => 'Styling',          'id' => 'styling'],
+    // One image per pricing category (alternates left/right down the page).
+    $catImg = [
+        'women'      => 'work-balayage',
+        'men'        => 'salon-mirror-bar',
+        'kids'       => 'salon-window',
+        'colour'     => 'work-honey',
+        'treatments' => 'work-glass-hair',
+        'styling'    => 'work-updo',
+        'packages'   => 'salon-arched-row',
     ];
 @endphp
 
@@ -28,67 +31,58 @@
         </div>
     </section>
 
-    {{-- Signature services — circular imagery --}}
-    <section class="band band--surface">
-        <div class="container">
-            <div class="sechead sechead--center reveal">
-                <p class="eyebrow">What we do</p>
-                <h2>A full menu of hair services.</h2>
-            </div>
-            <div class="circles stagger">
-                @foreach ($circles as $c)
-                    <a class="circle" href="#{{ $c['id'] }}">
-                        <div class="circle__img">
-                            <img class="cover" src="{{ asset('images/' . $c['img'] . '.webp') }}" alt="{{ $c['label'] }} at Classic Cuts &amp; Colors" loading="lazy">
-                        </div>
-                        <h3>{{ $c['label'] }}</h3>
-                    </a>
-                @endforeach
-            </div>
-        </div>
-    </section>
-
-    {{-- Full price list --}}
-    <section class="band" id="pricing">
+    {{-- Price list — each category is an alternating image + list --}}
+    <section class="band band--surface" id="pricing">
         <div class="container">
             <div class="sechead sechead--center reveal">
                 <p class="eyebrow">The price list</p>
                 <h2>Every service, every price.</h2>
             </div>
-
-            <div class="chips" style="justify-content:center;margin:0 0 10px">
+            <div class="chips" style="justify-content:center;margin:0 0 12px">
                 @foreach (config('salon.pricelist') as $cat)
                     <a class="chip" href="#{{ $cat['id'] }}">{{ $cat['chip'] }}</a>
                 @endforeach
             </div>
+        </div>
 
-            @foreach (config('salon.pricelist') as $cat)
-                <div class="svc-cat" id="{{ $cat['id'] }}">
-                    <div class="svc-cat__head reveal"><h2>{{ $cat['group'] }}</h2></div>
-
-                    @if (count($cat['subs']) === 1 && empty($cat['subs'][0]['title']))
-                        <div class="rows2 reveal">
-                            @foreach ($cat['subs'][0]['rows'] as $row)
-                                <div class="pricerow"><span class="name">{{ $row[0] }}</span><span class="price">{{ $row[1] }}</span></div>
-                            @endforeach
+        @foreach (config('salon.pricelist') as $cat)
+            <div class="svc-cat @if ($loop->iteration % 2 === 0) svc-cat--alt @endif" id="{{ $cat['id'] }}">
+                <div class="container">
+                    <div class="svc-cat__grid">
+                        <div class="svc-cat__media reveal">
+                            <img class="cover" src="{{ asset('images/' . $catImg[$cat['id']] . '.webp') }}" alt="{{ $cat['group'] }} at Classic Cuts &amp; Colors" loading="lazy">
                         </div>
-                    @else
-                        <div class="svc-subs">
-                            @foreach ($cat['subs'] as $sub)
-                                <div class="svc-sub reveal">
-                                    @if (!empty($sub['title']))
-                                        <h3 class="svc-sub__title">{{ $sub['title'] }}</h3>
-                                    @endif
-                                    @foreach ($sub['rows'] as $row)
+
+                        <div class="svc-cat__body reveal">
+                            <div class="svc-cat__head"><h2>{{ $cat['group'] }}</h2></div>
+
+                            @if (count($cat['subs']) === 1 && empty($cat['subs'][0]['title']))
+                                <div class="rows2">
+                                    @foreach ($cat['subs'][0]['rows'] as $row)
                                         <div class="pricerow"><span class="name">{{ $row[0] }}</span><span class="price">{{ $row[1] }}</span></div>
                                     @endforeach
                                 </div>
-                            @endforeach
+                            @else
+                                <div class="svc-subs">
+                                    @foreach ($cat['subs'] as $sub)
+                                        <div class="svc-sub">
+                                            @if (!empty($sub['title']))
+                                                <h3 class="svc-sub__title">{{ $sub['title'] }}</h3>
+                                            @endif
+                                            @foreach ($sub['rows'] as $row)
+                                                <div class="pricerow"><span class="name">{{ $row[0] }}</span><span class="price">{{ $row[1] }}</span></div>
+                                            @endforeach
+                                        </div>
+                                    @endforeach
+                                </div>
+                            @endif
                         </div>
-                    @endif
+                    </div>
                 </div>
-            @endforeach
+            </div>
+        @endforeach
 
+        <div class="container">
             <div class="infobox reveal">
                 <h3>Good to know</h3>
                 <ul>
@@ -100,7 +94,7 @@
     </section>
 
     {{-- Why us — image + feature list --}}
-    <section class="band band--surface">
+    <section class="band">
         <div class="container split">
             <div class="split__media arch reveal">
                 <img class="cover" src="{{ asset('images/salon-stations.webp') }}" alt="Styling stations at Classic Cuts &amp; Colors" width="891" height="1766" loading="lazy">
