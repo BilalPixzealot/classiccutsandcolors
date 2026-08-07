@@ -1,56 +1,94 @@
+@php
+    $circles = [
+        ['img' => 'work-honey',      'label' => 'Cuts',             'id' => 'women'],
+        ['img' => 'work-balayage',   'label' => 'Colour',           'id' => 'colour'],
+        ['img' => 'work-silver',     'label' => 'Foils & balayage', 'id' => 'colour'],
+        ['img' => 'work-glass-hair', 'label' => 'Smoothing',        'id' => 'treatments'],
+        ['img' => 'work-updo',       'label' => 'Styling',          'id' => 'styling'],
+    ];
+@endphp
+
 <x-layout
     title="Services & Pricing"
     solid-nav
-    description="Full price list for Classic Cuts & Colors, Eltham: women's, men's and kids' cuts, colour, foils, balayage, smoothing treatments (Nanoplasty, Hair Botox, keratin), styling and packages.">
+    description="Women's, men's and kids' cuts, colour, foils, balayage, smoothing treatments (Nanoplasty, Hair Botox, keratin), styling and packages at Classic Cuts & Colors, Eltham. Full price list.">
 
-    <section class="pagehead">
+    {{-- Hero — split text + arched image --}}
+    <section class="band" style="padding-top:150px">
+        <div class="container split">
+            <div class="reveal">
+                <p class="eyebrow">Services &amp; pricing</p>
+                <h1 class="gold" style="font-size:clamp(2.4rem,5.5vw,4.4rem);line-height:1.03;margin:16px 0 22px">Considered hair, honestly priced.</h1>
+                <p style="color:var(--ink-soft);max-width:46ch;margin:0 0 28px">From a classic cut to lived-in colour and smoothing treatments, every service begins with a listen, and for colour and smoothing, a complimentary consultation to get it right for your hair.</p>
+                <x-book />
+            </div>
+            <div class="split__media arch reveal">
+                <img class="cover" src="{{ asset('images/salon-window.webp') }}" alt="Inside Classic Cuts &amp; Colors salon" width="1000" height="1333" loading="lazy">
+            </div>
+        </div>
+    </section>
+
+    {{-- Signature services — circular imagery --}}
+    <section class="band band--surface">
         <div class="container">
-            <p class="eyebrow">Services &amp; pricing</p>
-            <h1 class="gold pagehead__title">The menu.</h1>
-            <p class="pagehead__lead">Affordable, honest pricing across cuts, colour, smoothing treatments and everything after. Colour and smoothing services begin with a complimentary consultation, so we get it right for your hair.</p>
-            <div class="chips">
-                <a class="chip is-active" href="#top">All</a>
-                @foreach (config('salon.pricelist') as $cat)
-                    <a class="chip" href="#{{ $cat['id'] }}">{{ $cat['chip'] }}</a>
+            <div class="sechead sechead--center reveal">
+                <p class="eyebrow">What we do</p>
+                <h2>A full menu of hair services.</h2>
+            </div>
+            <div class="circles stagger">
+                @foreach ($circles as $c)
+                    <a class="circle" href="#{{ $c['id'] }}">
+                        <div class="circle__img">
+                            <img class="cover" src="{{ asset('images/' . $c['img'] . '.webp') }}" alt="{{ $c['label'] }} at Classic Cuts &amp; Colors" loading="lazy">
+                        </div>
+                        <h3>{{ $c['label'] }}</h3>
+                    </a>
                 @endforeach
             </div>
         </div>
     </section>
 
-    @foreach (config('salon.pricelist') as $cat)
-        <section class="svc-cat" id="{{ $cat['id'] }}">
-            <div class="container">
-                <div class="svc-cat__head reveal">
-                    <h2>{{ $cat['group'] }}</h2>
-                </div>
-
-                @if (count($cat['subs']) === 1 && empty($cat['subs'][0]['title']))
-                    {{-- Single, untitled group → two-column rows --}}
-                    <div class="rows2 reveal">
-                        @foreach ($cat['subs'][0]['rows'] as $row)
-                            <div class="pricerow"><span class="name">{{ $row[0] }}</span><span class="price">{{ $row[1] }}</span></div>
-                        @endforeach
-                    </div>
-                @else
-                    <div class="svc-subs">
-                        @foreach ($cat['subs'] as $sub)
-                            <div class="svc-sub reveal">
-                                @if (!empty($sub['title']))
-                                    <h3 class="svc-sub__title">{{ $sub['title'] }}</h3>
-                                @endif
-                                @foreach ($sub['rows'] as $row)
-                                    <div class="pricerow"><span class="name">{{ $row[0] }}</span><span class="price">{{ $row[1] }}</span></div>
-                                @endforeach
-                            </div>
-                        @endforeach
-                    </div>
-                @endif
-            </div>
-        </section>
-    @endforeach
-
-    <section class="band" style="padding-top:clamp(30px,5vh,60px)">
+    {{-- Full price list --}}
+    <section class="band" id="pricing">
         <div class="container">
+            <div class="sechead sechead--center reveal">
+                <p class="eyebrow">The price list</p>
+                <h2>Every service, every price.</h2>
+            </div>
+
+            <div class="chips" style="justify-content:center;margin:0 0 10px">
+                @foreach (config('salon.pricelist') as $cat)
+                    <a class="chip" href="#{{ $cat['id'] }}">{{ $cat['chip'] }}</a>
+                @endforeach
+            </div>
+
+            @foreach (config('salon.pricelist') as $cat)
+                <div class="svc-cat" id="{{ $cat['id'] }}">
+                    <div class="svc-cat__head reveal"><h2>{{ $cat['group'] }}</h2></div>
+
+                    @if (count($cat['subs']) === 1 && empty($cat['subs'][0]['title']))
+                        <div class="rows2 reveal">
+                            @foreach ($cat['subs'][0]['rows'] as $row)
+                                <div class="pricerow"><span class="name">{{ $row[0] }}</span><span class="price">{{ $row[1] }}</span></div>
+                            @endforeach
+                        </div>
+                    @else
+                        <div class="svc-subs">
+                            @foreach ($cat['subs'] as $sub)
+                                <div class="svc-sub reveal">
+                                    @if (!empty($sub['title']))
+                                        <h3 class="svc-sub__title">{{ $sub['title'] }}</h3>
+                                    @endif
+                                    @foreach ($sub['rows'] as $row)
+                                        <div class="pricerow"><span class="name">{{ $row[0] }}</span><span class="price">{{ $row[1] }}</span></div>
+                                    @endforeach
+                                </div>
+                            @endforeach
+                        </div>
+                    @endif
+                </div>
+            @endforeach
+
             <div class="infobox reveal">
                 <h3>Good to know</h3>
                 <ul>
@@ -61,6 +99,26 @@
         </div>
     </section>
 
+    {{-- Why us — image + feature list --}}
+    <section class="band band--surface">
+        <div class="container split">
+            <div class="split__media arch reveal">
+                <img class="cover" src="{{ asset('images/salon-stations.webp') }}" alt="Styling stations at Classic Cuts &amp; Colors" width="891" height="1766" loading="lazy">
+            </div>
+            <div class="reveal">
+                <p class="eyebrow">Why Classic Cuts &amp; Colors</p>
+                <h2 style="font-size:clamp(2rem,4.5vw,3.4rem);line-height:1.05;margin-bottom:26px">Expertise you can see and feel.</h2>
+                <div class="feature-list">
+                    <div class="feature"><span class="feature__mark">&#10022;</span><div><h3>Complimentary consultations</h3><p>Every colour and smoothing service starts with a consult, so the result suits you and your lifestyle.</p></div></div>
+                    <div class="feature"><span class="feature__mark">&#10022;</span><div><h3>Organic JUUCE care</h3><p>Australian-made, organic products used in the chair and available to take home.</p></div></div>
+                    <div class="feature"><span class="feature__mark">&#10022;</span><div><h3>Experienced &amp; expert</h3><p>A team experienced in cutting, expert in colour and creative in styling for any occasion.</p></div></div>
+                    <div class="feature"><span class="feature__mark">&#10022;</span><div><h3>Smoothing specialists</h3><p>Nanoplasty, Hair Botox and formaldehyde-free keratin for smooth, glossy, low-effort hair.</p></div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {{-- CTA --}}
     <section class="ctaband">
         <div class="container">
             <p class="eyebrow">Ready?</p>
