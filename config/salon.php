@@ -170,45 +170,59 @@ return [
     */
     'booking_url' => env('SALON_BOOKING_URL', null),
 
-    // Full price list (Services page). Each group => rows of [service, price].
+    // Full price list (Services page). Categories → sub-groups → rows of [service, price].
     'pricelist' => [
-        ['group' => 'Cuts', 'rows' => [
-            ['Ladies', '$47-50'], ['Ladies (Mon-Fri)', '$45'], ['Mens', '$35'],
-            ['Clippers', '$27'], ['School students', '$34-40'], ['Kids (under 7)', '$30'],
-            ['Restyle', '+$5-10'], ['Fringe / neck trim', '$10-15'],
+        ['group' => 'Women', 'id' => 'women', 'chip' => 'Women', 'subs' => [
+            ['title' => 'Haircuts', 'rows' => [
+                ['Ladies', '$47–50'], ['Ladies (Mon–Fri)', '$45'],
+                ['Restyle', '+$5–10'], ['Fringe / neck trim', '$10–15'],
+            ]],
+            ['title' => 'Wash, cut & dry', 'rows' => [['Wash, cut & dry', '$65']]],
+            ['title' => 'Cut & blow wave', 'rows' => [
+                ['Short', '$70–75'], ['Medium', '$80'], ['Medium to long', '$85'], ['Long', '$95'],
+            ]],
+            ['title' => 'Blow waves', 'rows' => [
+                ['Very short', '$40'], ['Short to medium', '$45'], ['Medium to long', '$50–55'],
+                ['Long', '$65'], ['Extra long', '$75+'], ['GHD finish', '+$5–15'],
+            ]],
         ]],
-        ['group' => 'Blow waves', 'rows' => [
-            ['Very short', '$40'], ['Short to medium', '$45'], ['Medium to long', '$50-55'],
-            ['Long', '$65'], ['Extra long', '$75+'], ['GHD finish', '+$5-15'],
+        ['group' => 'Men', 'id' => 'men', 'chip' => 'Men', 'subs' => [
+            ['title' => 'Haircuts', 'rows' => [["Men's cut", '$35'], ['Clippers', '$27']]],
+            ['title' => 'Wash, cut & dry', 'rows' => [['Wash, cut & dry', '$38']]],
         ]],
-        ['group' => 'Wash, cut & dry', 'rows' => [
-            ['Ladies', '$65'], ['School students', '$60'], ['Mens', '$38'], ['Kids (under 7)', '$50'],
+        ['group' => 'Kids & students', 'id' => 'kids', 'chip' => 'Kids', 'subs' => [
+            ['title' => 'Haircuts', 'rows' => [['School students', '$34–40'], ['Kids (under 7)', '$30']]],
+            ['title' => 'Wash, cut & dry', 'rows' => [['School students', '$60'], ['Kids (under 7)', '$50']]],
         ]],
-        ['group' => 'Cut & blow wave', 'rows' => [
-            ['Short', '$70-75'], ['Medium', '$80'], ['Medium to long', '$85'], ['Long', '$95'],
+        ['group' => 'Colour', 'id' => 'colour', 'chip' => 'Colour', 'subs' => [
+            ['title' => 'Colour services', 'rows' => [
+                ['Tint regrowth', '$75+'], ['Semi-permanent', '$75'], ['Fashion colour', '$85+'],
+                ['Scalp bleach', '$90'], ['Root stretch / ombre', '$220'], ['Toner', '$20–45'],
+                ['Additional colour', '+$15'],
+            ]],
+            ['title' => 'Foils & balayage', 'rows' => [
+                ['8 foil highlights', '$70'], ['Half head', '$90–130'], ['Three-quarter head', '$140–170'],
+                ['Full head', '$180–280'], ['Scattered foils', '$150–180'], ['Tip cap', '$80+'],
+                ['Balayage & blow wave', '$240'],
+            ]],
         ]],
-        ['group' => 'Colour', 'rows' => [
-            ['Tint regrowth', '$75+'], ['Additional colour', '+$15'], ['Semi-permanent', '$75'],
-            ['Scalp bleach', '$90'], ['Toner', '$20-45'], ['Root stretch / ombre', '$220'],
-            ['Fashion colour', '$85+'],
+        ['group' => 'Treatments', 'id' => 'treatments', 'chip' => 'Treatments', 'subs' => [
+            ['title' => null, 'rows' => [
+                ['Nanoplasty', 'On consultation'], ['Hair Botox', 'On consultation'],
+                ['Formaldehyde-free keratin', 'On consultation'],
+            ]],
         ]],
-        ['group' => 'Foils', 'rows' => [
-            ['8 foil hi-lights', '$70'], ['Half head', '$90-130'], ['Three-quarter head', '$140-170'],
-            ['Full head', '$180-280'], ['Balayage & blow wave', '$240'], ['Scattered foils', '$150-180'],
-            ['Tip cap', '$80+'],
+        ['group' => 'Styling', 'id' => 'styling', 'chip' => 'Styling', 'subs' => [
+            ['title' => null, 'rows' => [
+                ['Hair up', '$55–80+'], ['French braid', '$25–50'], ['Braid & curls', '$75'],
+                ['Straightening irons', '$30'], ['GHD curls', '$40–50'],
+            ]],
         ]],
-        ['group' => 'Smoothing treatments', 'rows' => [
-            ['Nanoplasty', 'On consultation'], ['Hair Botox', 'On consultation'],
-            ['Formaldehyde-free keratin', 'On consultation'],
-        ]],
-        ['group' => 'Styling & updos', 'rows' => [
-            ['Hair up', '$55-80+'], ['French braid', '$25-50'], ['Braid & curls', '$75'],
-            ['Straightening irons', '$30'], ['GHD curls', '$40-50'],
-        ]],
-        ['group' => 'Packages', 'rows' => [
-            ['Tint & scattered foils', '$170'], ['Tint, trim & dry off', '$135'],
-            ['Tint & 4 foils', '$100'], ['Perm, cut & body wave', '$150+'],
-            ['Permanent straightening & trim', '$300+'],
+        ['group' => 'Packages', 'id' => 'packages', 'chip' => 'Packages', 'subs' => [
+            ['title' => null, 'rows' => [
+                ['Tint & 4 foils', '$100'], ['Tint, trim & dry off', '$135'], ['Tint & scattered foils', '$170'],
+                ['Perm, cut & body wave', '$150+'], ['Permanent straightening & trim', '$300+'],
+            ]],
         ]],
     ],
 
