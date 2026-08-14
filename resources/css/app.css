@@ -111,7 +111,7 @@ a { color: inherit; text-decoration: none; }
 /* ------------------------------------------------------------------ *
  *  Hero
  * ------------------------------------------------------------------ */
-.hero { position: relative; height: 180vh; }
+.hero { position: relative; height: 150vh; }
 .hero__stage { position: sticky; top: 0; height: 100svh; overflow: hidden; display: flex; align-items: flex-end; padding: 150px 0 9vh; }
 .hero__photo { z-index: 0; object-position: center 40%; transform: scale(1.05); transform-origin: center 55%; will-change: transform; }
 .hero__inner { will-change: opacity, transform; }

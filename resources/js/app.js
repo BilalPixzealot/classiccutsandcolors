@@ -49,11 +49,9 @@ document.addEventListener('DOMContentLoaded', () => {
             const total = hero.offsetHeight - window.innerHeight;
             const scrolled = Math.min(Math.max(-hero.getBoundingClientRect().top, 0), total);
             const p = total > 0 ? scrolled / total : 0; // 0 → 1 through the hero
-            heroPhoto.style.transform = 'scale(' + (1.05 + p * 0.55).toFixed(3) + ')';
-            if (heroInner) {
-                heroInner.style.opacity = Math.max(0, 1 - p * 1.25).toFixed(3);
-                heroInner.style.transform = 'translateY(' + (-p * 26).toFixed(1) + 'px)';
-            }
+            heroPhoto.style.transform = 'scale(' + (1.05 + p * 0.5).toFixed(3) + ')';
+            // Keep the copy readable; only ease it out right at the end.
+            if (heroInner) heroInner.style.opacity = (p < 0.72 ? 1 : Math.max(0, 1 - (p - 0.72) / 0.28)).toFixed(3);
         };
         const onScroll = () => {
             if (!ticking) { ticking = true; requestAnimationFrame(update); }
