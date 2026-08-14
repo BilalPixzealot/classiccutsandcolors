@@ -113,7 +113,9 @@ a { color: inherit; text-decoration: none; }
  * ------------------------------------------------------------------ */
 .hero { position: relative; height: 150vh; }
 .hero__stage { position: sticky; top: 0; height: 100svh; overflow: hidden; display: flex; align-items: flex-end; padding: 150px 0 9vh; }
-.hero__photo { z-index: 0; object-position: center 40%; transform: scale(1.05); transform-origin: center 55%; will-change: transform; }
+.hero__media { position: absolute; inset: 0; z-index: 0; }
+.hero__layer { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 45%; transform-origin: center 48%; will-change: transform, opacity; opacity: 0; }
+.hero__layer:first-child { opacity: 1; }
 .hero__inner { will-change: opacity, transform; }
 .hero__scrim { position: absolute; inset: 0; z-index: 1; background: linear-gradient(to top, rgba(30, 12, 20, .94) 0%, rgba(30, 12, 20, .55) 42%, rgba(34, 14, 22, .34) 72%, rgba(40, 16, 26, .55) 100%); }
 /* Cinematic vignette — darkens the edges to draw the eye in. */

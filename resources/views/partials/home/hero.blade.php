@@ -1,13 +1,19 @@
 @php $salon = config('salon'); @endphp
 
 {{-- Hero. The tall section gives scroll room; the sticky stage stays pinned
-     while the image zooms "into" the salon (see app.js hero scroll-zoom). --}}
+     while the camera "travels in" — a continuous zoom that crossfades through
+     a few salon views (wide → closer → inside). See app.js hero scroll-zoom. --}}
 <header class="hero" id="top">
     <div class="hero__stage">
-        <img class="hero__photo cover"
-             src="{{ asset('images/salon-mirror-bar.webp') }}"
-             alt="Interior of Classic Cuts &amp; Colors hair salon in Eltham"
-             width="1448" height="1086" fetchpriority="high">
+        <div class="hero__media">
+            <img class="hero__layer" src="{{ asset('images/salon-arched-row.webp') }}"
+                 alt="Interior of Classic Cuts &amp; Colors hair salon in Eltham"
+                 width="1429" height="1101" fetchpriority="high">
+            <img class="hero__layer" src="{{ asset('images/salon-mirror-bar.webp') }}"
+                 alt="" width="1448" height="1086" loading="lazy">
+            <img class="hero__layer" src="{{ asset('images/salon-window.webp') }}"
+                 alt="" width="1000" height="1333" loading="lazy">
+        </div>
         <div class="hero__scrim" aria-hidden="true"></div>
         <div class="grain" aria-hidden="true"></div>
 
