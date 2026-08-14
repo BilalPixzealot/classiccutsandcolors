@@ -32,4 +32,5 @@
             </div>
         </div>
     </div>
+    <div class="hero__scroll" aria-hidden="true"></div>
 </header>
