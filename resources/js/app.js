@@ -64,4 +64,19 @@ document.addEventListener('DOMContentLoaded', () => {
         window.addEventListener('resize', onScroll, { passive: true });
         update();
     }
+
+    // 4. Studio slider — arrow buttons scroll the snap track by one slide.
+    document.querySelectorAll('.studio-slider').forEach((slider) => {
+        const track = slider.querySelector('.slider__track');
+        if (!track) return;
+        const stepBy = () => {
+            const slide = track.querySelector('.slide');
+            const gap = parseFloat(getComputedStyle(track).gap || '0') || 0;
+            return (slide ? slide.getBoundingClientRect().width : track.clientWidth * 0.8) + gap;
+        };
+        const prev = slider.querySelector('.slider__prev');
+        const next = slider.querySelector('.slider__next');
+        if (prev) prev.addEventListener('click', () => track.scrollBy({ left: -stepBy(), behavior: 'smooth' }));
+        if (next) next.addEventListener('click', () => track.scrollBy({ left: stepBy(), behavior: 'smooth' }));
+    });
 });

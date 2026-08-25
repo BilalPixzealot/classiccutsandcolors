@@ -7,7 +7,6 @@
     @include('partials.home.marquee')
     @include('partials.home.statement')
     @include('partials.home.menu')
-    @include('partials.home.video')
     @include('partials.home.work')
     @include('partials.home.studio')
     @include('partials.home.about')
