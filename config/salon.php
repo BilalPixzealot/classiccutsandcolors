@@ -20,7 +20,7 @@ return [
     'phone'         => '(03) 9439 6002',
     'phone_e164'    => '+61394396002',
     'phone_tel'     => '0394396002',
-    'email'         => 'info@classiccutsandcolors.com.au',
+    'email'         => 'contact@classiccutsandcolors.com.au',
 
     'address' => [
         'line1'    => 'Shop 3, Eltham Village Shopping Centre',
@@ -35,7 +35,7 @@ return [
     // Opening hours — display strings + machine-readable spec for schema.
     'hours' => [
         'display' => [
-            'Mon – Wed' => '9am – 5pm',
+            'Mon to Wed' => '9am – 5pm',
             'Thursday'  => '9am – 5:30pm',
             'Friday'    => '9am – 5pm',
             'Saturday'  => '9am – 4pm',
@@ -186,19 +186,11 @@ return [
                 ['Long', '$65'], ['Extra long', '$75+'], ['GHD finish', '+$5–15'],
             ]],
         ]],
-        ['group' => 'Men', 'id' => 'men', 'chip' => 'Men', 'subs' => [
-            ['title' => 'Haircuts', 'rows' => [["Men's cut", '$35'], ['Clippers', '$27']]],
-            ['title' => 'Wash, cut & dry', 'rows' => [['Wash, cut & dry', '$38']]],
-        ]],
-        ['group' => 'Kids & students', 'id' => 'kids', 'chip' => 'Kids', 'subs' => [
-            ['title' => 'Haircuts', 'rows' => [['School students', '$34–40'], ['Kids (under 7)', '$30']]],
-            ['title' => 'Wash, cut & dry', 'rows' => [['School students', '$60'], ['Kids (under 7)', '$50']]],
-        ]],
         ['group' => 'Colour', 'id' => 'colour', 'chip' => 'Colour', 'subs' => [
             ['title' => 'Colour services', 'rows' => [
                 ['Tint regrowth', '$75+'], ['Semi-permanent', '$75'], ['Fashion colour', '$85+'],
                 ['Scalp bleach', '$90'], ['Root stretch / ombre', '$220'], ['Toner', '$20–45'],
-                ['Additional colour', '+$15'],
+                ['Additional colour', '$15+'],
             ]],
             ['title' => 'Foils & balayage', 'rows' => [
                 ['8 foil highlights', '$70'], ['Half head', '$90–130'], ['Three-quarter head', '$140–170'],
@@ -210,6 +202,7 @@ return [
             ['title' => null, 'rows' => [
                 ['Nanoplasty', 'On consultation'], ['Hair Botox', 'On consultation'],
                 ['Formaldehyde-free keratin', 'On consultation'],
+                ['Perm', 'On consultation'], ['Chemical straightening', 'On consultation'],
             ]],
         ]],
         ['group' => 'Styling', 'id' => 'styling', 'chip' => 'Styling', 'subs' => [
@@ -217,6 +210,14 @@ return [
                 ['Hair up', '$55–80+'], ['French braid', '$25–50'], ['Braid & curls', '$75'],
                 ['Straightening irons', '$30'], ['GHD curls', '$40–50'],
             ]],
+        ]],
+        ['group' => 'Men', 'id' => 'men', 'chip' => 'Men', 'subs' => [
+            ['title' => 'Haircuts', 'rows' => [["Men's cut", '$35'], ['Clippers', '$27']]],
+            ['title' => 'Wash, cut & dry', 'rows' => [['Wash, cut & dry', '$38']]],
+        ]],
+        ['group' => 'Kids & students', 'id' => 'kids', 'chip' => 'Kids', 'subs' => [
+            ['title' => 'Haircuts', 'rows' => [['School students', '$34–40'], ['Kids (under 7)', '$30']]],
+            ['title' => 'Wash, cut & dry', 'rows' => [['School students', '$60'], ['Kids (under 7)', '$50']]],
         ]],
         ['group' => 'Packages', 'id' => 'packages', 'chip' => 'Packages', 'subs' => [
             ['title' => null, 'rows' => [

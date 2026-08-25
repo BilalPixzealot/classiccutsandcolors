@@ -44,8 +44,7 @@
                     <span class="amount">Custom</span>
                 </div>
                 <div class="hero__actions">
-                    <x-book label="Purchase a gift" />
-                    <a href="{{ route('visit') }}" class="btn btn--ghost">Enquire in salon</a>
+                    <a href="{{ route('visit') }}" class="btn">Enquire in salon</a>
                 </div>
             </div>
         </div>
@@ -70,7 +69,7 @@
             <p class="eyebrow">Give good hair</p>
             <h2 class="gold">Purchase a gift card.</h2>
             <p>Get in touch and we'll have one ready for you.</p>
-            <x-book label="Purchase a gift" />
+            <a href="{{ route('visit') }}" class="btn">Enquire in salon</a>
         </div>
     </section>
 </x-layout>
