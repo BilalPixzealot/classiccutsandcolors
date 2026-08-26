@@ -1,12 +1,12 @@
 @php
     // One image per pricing category (alternates left/right down the page).
     $catImg = [
-        'women'      => 'work-balayage',
-        'men'        => 'salon-mirror-bar',
+        'women'      => 'svc-women',
+        'men'        => 'svc-men',
         'kids'       => 'salon-window',
-        'colour'     => 'work-honey',
-        'treatments' => 'work-glass-hair',
-        'styling'    => 'work-updo',
+        'colour'     => 'svc-colour',
+        'treatments' => 'svc-treatments',
+        'styling'    => 'svc-styling',
         'packages'   => 'salon-arched-row',
     ];
 @endphp
