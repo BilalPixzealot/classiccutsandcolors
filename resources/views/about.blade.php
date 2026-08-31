@@ -1,14 +1,14 @@
 <x-layout
     title="About"
     solid-nav
-    description="Classic Cuts & Colors is a modern, welcoming hair salon in Eltham Village: expert colour, considered cuts and smoothing treatments, with organic JUUCE care for every head of hair.">
+    description="With over two decades of expertise, Classic Cuts & Colors is a modern, welcoming hair salon in Eltham Village: expert colour, considered cuts and smoothing treatments, with organic JUUCE and Pure care for every head of hair.">
 
     {{-- Page header --}}
     <section class="pagehead">
         <div class="container">
             <p class="eyebrow">About the salon</p>
             <h1 class="gold pagehead__title">Hair for everyone, in the heart of Eltham.</h1>
-            <p class="pagehead__lead">Classic Cuts &amp; Colors is a modern, welcoming hair studio inside Eltham Village Shopping Centre. Expert colour, considered cuts and smoothing treatments, with organic JUUCE care for every head of hair.</p>
+            <p class="pagehead__lead">With over two decades of expertise, Classic Cuts &amp; Colors is a modern, welcoming hair studio inside Eltham Village Shopping Centre. We offer expert colour, considered cuts, and smoothing treatments with organic JUUCE and Pure care for every head of hair.</p>
         </div>
     </section>
 
