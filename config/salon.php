@@ -154,12 +154,9 @@ return [
         [
             'id' => 'sarah', 'name' => 'Sarah K', 'img' => 'brand-sarah',
             'eyebrow' => 'Styling & finishing',
-            'tag' => 'Texture, grip and shine. The finishing range for creating the look at home.',
+            'tag' => 'A styling-and-finishing favourite for creating the look at home.',
             'products' => [
-                ['name' => 'Sea Salt Spray',  'desc' => 'Effortless, beachy texture in a spritz.'],
-                ['name' => 'Texture Paste',   'desc' => 'Pliable hold and matte definition.'],
-                ['name' => 'Dry Shampoo',     'desc' => 'Refresh and add body between washes.'],
-                ['name' => 'Finishing Spray', 'desc' => 'A polished, long-lasting set.'],
+                ['name' => 'Sea Salt Spray', 'desc' => 'Effortless, beachy texture in a spritz — tousled volume and grip with a natural, matte finish.'],
             ],
         ],
     ],
