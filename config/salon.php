@@ -15,6 +15,7 @@ return [
     'name'      => 'Classic Cuts & Colors',
     'tagline'   => 'Eltham Village · Hair Studio',
     'suburb'    => 'Eltham',
+    'abn'       => '32 695 875 462',
 
     // Contact / NAP (Name-Address-Phone) — used in markup and JSON-LD schema.
     'phone'         => '(03) 9439 6002',

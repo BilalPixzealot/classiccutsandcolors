@@ -40,7 +40,7 @@
         </div>
 
         <div class="footer__bar">
-            <span>&copy; {{ date('Y') }} {{ $salon['name'] }}, Eltham VIC</span>
+            <span>&copy; {{ date('Y') }} {{ $salon['name'] }}, Eltham VIC · ABN {{ $salon['abn'] }}</span>
             <span>Hair for all of Eltham · cuts, colour &amp; care</span>
         </div>
     </div>
