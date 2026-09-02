@@ -30,7 +30,13 @@
                 <div class="pgrid stagger">
                     @foreach ($brand['products'] as $i => $product)
                         <article class="pcard">
-                            <div class="pcard__img t{{ ($i % 4) + 1 }}"></div>
+                            @if (!empty($product['img']))
+                                <div class="pcard__img pcard__img--photo">
+                                    <img src="{{ asset('images/' . $product['img'] . '.webp') }}" alt="{{ $product['name'] }} by {{ $brand['name'] }}" width="700" height="700" loading="lazy">
+                                </div>
+                            @else
+                                <div class="pcard__img t{{ ($i % 4) + 1 }}"></div>
+                            @endif
                             <div class="pcard__b">
                                 <h3>{{ $product['name'] }}</h3>
                                 <p>{{ $product['desc'] }}</p>

@@ -134,10 +134,10 @@ return [
             'eyebrow' => 'Organic · Australian made',
             'tag' => 'Our house favourite: organic, Australian-made care for every hair type, and gentle on colour.',
             'products' => [
-                ['name' => 'Toning Shampoo',        'desc' => 'Keeps blondes cool and brunettes rich between visits.'],
-                ['name' => 'Hydrating Conditioner', 'desc' => 'Daily moisture for soft, manageable lengths.'],
-                ['name' => 'Repair Treatment Mask', 'desc' => 'Weekly rebuild for coloured and heat-styled hair.'],
-                ['name' => 'Styling Oil',           'desc' => 'Lightweight shine and frizz control to finish.'],
+                ['name' => 'Silver Blonde Shampoo',         'desc' => 'Tones brassiness for cool, bright blonde between visits.', 'img' => 'juuce-silver-blonde-shampoo'],
+                ['name' => 'Hyaluronic Hydrate Conditioner','desc' => 'Daily hyaluronic moisture for soft, manageable lengths.',  'img' => 'juuce-hyaluronic-conditioner'],
+                ['name' => 'Repair 1 Minute Treatment',     'desc' => 'A fast weekly rebuild for coloured and heat-styled hair.', 'img' => 'juuce-repair-1-minute'],
+                ['name' => 'Gloss Finishing Serum',         'desc' => 'Lightweight shine and frizz control to finish.',           'img' => 'juuce-gloss-serum'],
             ],
         ],
         [
