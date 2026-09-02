@@ -145,10 +145,10 @@ return [
             'eyebrow' => 'Everyday essentials',
             'tag' => 'Clean, simple staples for wash-day. The reliable basics every routine needs.',
             'products' => [
-                ['name' => 'Daily Shampoo',      'desc' => 'Gentle enough for everyday cleansing.'],
-                ['name' => 'Daily Conditioner',  'desc' => 'Smooths and detangles without weighing hair down.'],
-                ['name' => 'Moisture Treatment', 'desc' => 'A midweek boost for thirsty ends.'],
-                ['name' => 'Flexible Hairspray', 'desc' => 'All-day hold with a natural, brushable finish.'],
+                ['name' => 'Forever Blonde Shampoo',    'desc' => 'Tones brassiness for cool, bright blonde between washes.', 'img' => 'pure-forever-blonde-shampoo'],
+                ['name' => 'Forever Blonde Conditioner','desc' => 'Keeps blonde soft, toned and easy to manage.',           'img' => 'pure-forever-blonde-conditioner'],
+                ['name' => 'Miracle Renew Mask',        'desc' => 'A deep weekly moisture treatment for thirsty ends.',      'img' => 'pure-miracle-renew-mask'],
+                ['name' => 'Halo Spray',                'desc' => 'Weightless shine and a flexible, brushable finish.',       'img' => 'pure-halo-spray'],
             ],
         ],
         [
