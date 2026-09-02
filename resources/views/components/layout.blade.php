@@ -22,6 +22,7 @@
         'image'    => $ogImage,
         'url'      => url('/'),
         'telephone'=> $salon['phone_e164'],
+        'email'    => $salon['email'],
         'priceRange' => '$$',
         'address'  => [
             '@type'           => 'PostalAddress',

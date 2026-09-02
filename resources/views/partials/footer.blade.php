@@ -33,6 +33,7 @@
                 <div class="footer__col">
                     <h4>Contact</h4>
                     <a href="tel:{{ $salon['phone_tel'] }}">{{ $salon['phone'] }}</a>
+                    <a href="mailto:{{ $salon['email'] }}">{{ $salon['email'] }}</a>
                     <p>{{ $salon['locality'] ?? 'Eltham' }}, Victoria</p>
                 </div>
             </div>

@@ -14,6 +14,7 @@
         <div class="visit__info reveal">
             <div class="vrow"><span>Where</span><b>{{ $a['line1'] }}<br>{{ $a['line2'] }}, {{ $a['locality'] }} {{ $a['region'] }} {{ $a['postcode'] }} · undercover parking</b></div>
             <div class="vrow"><span>Phone</span><b><a href="tel:{{ $salon['phone_tel'] }}">{{ $salon['phone'] }}</a></b></div>
+            <div class="vrow"><span>Email</span><b><a href="mailto:{{ $salon['email'] }}">{{ $salon['email'] }}</a></b></div>
             <div class="vrow"><span>Hours</span><b>Mon–Wed 9–5 · Thu 9–5:30<br>Fri 9–5 · Sat 9–4 · Sun closed</b></div>
             <div class="vrow"><span>Booking</span><b>Reserve your appointment online or contact our team for personalised scheduling.</b></div>
         </div>
