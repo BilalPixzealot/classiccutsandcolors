@@ -27,42 +27,24 @@
                     </div>
                     <p>{{ $brand['tag'] }}</p>
                 </div>
-                @if (count($brand['products']) === 1)
-                    @php $product = $brand['products'][0]; @endphp
-                    <div class="spotlight reveal">
-                        <div class="spotlight__media">
+                <div class="pgrid stagger">
+                    @foreach ($brand['products'] as $i => $product)
+                        <article class="pcard">
                             @if (!empty($product['img']))
-                                <img src="{{ asset('images/' . $product['img'] . '.webp') }}" alt="{{ $product['name'] }} by {{ $brand['name'] }}" width="700" height="875" loading="lazy">
-                            @else
-                                <div class="spotlight__ph t3"></div>
-                            @endif
-                        </div>
-                        <div class="spotlight__body">
-                            <h3>{{ $product['name'] }}</h3>
-                            <p>{{ $product['desc'] }}</p>
-                            <span class="pcard__meta">Available in salon</span>
-                        </div>
-                    </div>
-                @else
-                    <div class="pgrid stagger">
-                        @foreach ($brand['products'] as $i => $product)
-                            <article class="pcard">
-                                @if (!empty($product['img']))
-                                    <div class="pcard__img pcard__img--photo">
-                                        <img src="{{ asset('images/' . $product['img'] . '.webp') }}" alt="{{ $product['name'] }} by {{ $brand['name'] }}" width="700" height="700" loading="lazy">
-                                    </div>
-                                @else
-                                    <div class="pcard__img t{{ ($i % 4) + 1 }}"></div>
-                                @endif
-                                <div class="pcard__b">
-                                    <h3>{{ $product['name'] }}</h3>
-                                    <p>{{ $product['desc'] }}</p>
-                                    <span class="pcard__meta">Available in salon</span>
+                                <div class="pcard__img pcard__img--photo">
+                                    <img src="{{ asset('images/' . $product['img'] . '.webp') }}" alt="{{ $product['name'] }} by {{ $brand['name'] }}" width="700" height="700" loading="lazy">
                                 </div>
-                            </article>
-                        @endforeach
-                    </div>
-                @endif
+                            @else
+                                <div class="pcard__img t{{ ($i % 4) + 1 }}"></div>
+                            @endif
+                            <div class="pcard__b">
+                                <h3>{{ $product['name'] }}</h3>
+                                <p>{{ $product['desc'] }}</p>
+                                <span class="pcard__meta">Available in salon</span>
+                            </div>
+                        </article>
+                    @endforeach
+                </div>
             </div>
         </section>
     @endforeach
