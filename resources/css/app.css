@@ -321,8 +321,8 @@ a { color: inherit; text-decoration: none; }
 .bhead p { max-width: 40ch; color: var(--ink-soft); margin: 0; }
 
 /* Gallery masonry */
-.gwall { columns: 4; column-gap: 18px; }
-.gwall figure { break-inside: avoid; margin: 0 0 18px; position: relative; border-radius: 8px; overflow: hidden; box-shadow: var(--shadow); }
+.gwall { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+.gwall figure { margin: 0; position: relative; border-radius: 8px; overflow: hidden; box-shadow: var(--shadow); }
 .gwall img { width: 100%; display: block; transition: transform 1s cubic-bezier(.2, .8, .2, 1); }
 .gwall figure:hover img { transform: scale(1.05); }
 .gwall figure::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, rgba(20, 8, 14, .55), transparent 52%); opacity: 0; transition: .35s; }
@@ -465,7 +465,7 @@ a { color: inherit; text-decoration: none; }
     .brandgrid { grid-template-columns: repeat(2, 1fr); }
     .workgrid { grid-template-columns: repeat(3, 1fr); }
     .values { grid-template-columns: repeat(2, 1fr); }
-    .gwall { columns: 2; }
+    .gwall { grid-template-columns: repeat(2, 1fr); }
     .pgrid { grid-template-columns: repeat(2, 1fr); }
     .steps { grid-template-columns: 1fr; }
     .svc-subs { grid-template-columns: 1fr; }
@@ -483,7 +483,7 @@ a { color: inherit; text-decoration: none; }
     .brandgrid { grid-template-columns: 1fr; }
     .workgrid { grid-template-columns: repeat(2, 1fr); }
     .values { grid-template-columns: 1fr; }
-    .gwall { columns: 1; }
+    .gwall { grid-template-columns: 1fr; }
     .pgrid { grid-template-columns: 1fr; }
     .pricegroups { grid-template-columns: 1fr; }
     .rows2 { columns: 1; }
